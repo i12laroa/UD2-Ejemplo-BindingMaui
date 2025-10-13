@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD2_Ejemplo_BindingMaui.MainPage"
+             Title="Página Principal">
+
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <!-- Primer bloque: TextBox destino del binding -->
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Destino del elemento Enlace de Datos (Binding):"
+                   VerticalOptions="Center"/>
+                <Entry x:Name="MiCuadro"
+                   WidthRequest="100"
+                   Text="{Binding Source={x:Reference MiSlider}, Path=Value, Mode=OneWay}"
+                   IsReadOnly="True"/>
+            </HorizontalStackLayout>
+
+            <!-- Segundo bloque: Slider origen del binding -->
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Origen del elemento Enlace de Datos (Binding):"
+                   VerticalOptions="Center"/>
+                <Slider x:Name="MiSlider"
+                    WidthRequest="350"
+                    Minimum="0"
+                    Maximum="100"
+                    VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ContentPage>
+
